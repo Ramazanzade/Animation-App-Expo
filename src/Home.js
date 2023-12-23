@@ -1,10 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions,Text } from 'react-native';
+import { View, StyleSheet, Dimensions,Text, Image, FlatList } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-
+import data from './data.json'
 const { width, height } = Dimensions.get('window');
 
 const Home = () => {
+    const renderitem =(item)=>{
+        return(
+            <View>
+                <Image
+                    source={item.imge}
+                    style={{width:100,height:100}}
+                />
+                <Text>{item.title}</Text>
+            </View>
+        )
+    }
     return (
         <View style={styles.container}>
             <Svg width={width} height={height*1.5} viewBox={`0 0 ${width} ${height * 1}`} style={{ position: 'absolute' , marginTop:'-75%'}} >
@@ -14,6 +25,10 @@ const Home = () => {
                         L ${width} ${height * 0.7}
                         L 0 ${height * 100} `}
                     fill="#A8F5C4"
+                />
+                <FlatList
+                    data={data}
+                    renderItem={({item})=>renderitem(item)}
                 />
             </Svg>
         </View>

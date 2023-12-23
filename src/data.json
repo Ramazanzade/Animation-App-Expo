@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "price":34.45,
+        "title": "accusamus beatae ad facilis cum similique qui sunt",
+        "imge":"assets/imge/1.png",
+        "imge1":"assets/imge/y.png"
+        
+    },
+    {
+        "id":2,
+        "price":24.45,
+        "title": "accusamus beatae ad facilis cum similique qui sunt",
+        "imge":"assets/imge/2.png",
+        "imge1":"assets/imge/y1.png"
+        
+    },
+    {
+        "id":3,
+        "price":44.45,
+        "title": "accusamus beatae ad facilis cum similique qui sunt",
+        "imge":"assets/imge/3.png",
+        "imge1":"assets/imge/y2.png"
+
+        
+    }
+    
+]
