@@ -28,17 +28,41 @@ const Home = () => {
             imge1: require('../assets/imge/y2.png')
 
 
-        }
+        },
+        {
+            id: 4,
+            price: 24.45,
+            title: "accusamus beatae ad facilis cum similique qui sunt",
+            imge: require('../assets/imge/2.png'),
+            imge1: require('../assets/imge/y1.png')
+
+        },
+        
+        {
+            id: 5,
+            price: 24.45,
+            title: "accusamus beatae ad facilis cum similique qui sunt",
+            imge: require('../assets/imge/1.png'),
+            imge1: require('../assets/imge/y1.png')
+
+        },
 
     ]
+    const scrollX = useRef(new Animated.Value(0)).current;
+
     const renderitem = (item, index) => {
+        const inputRange = [(index - 1) * 200, index * 200, (index + 1) * 200];
+        const translateY = scrollX.interpolate({
+            inputRange,
+            outputRange: [-5, 25, -5]
+        });
         return (
-            <View style={{ marginLeft: 40}}>
+            <Animated.View style={{transform: [{ translateY: translateY }],        }}>
                 <Image
                     source={item.imge}
                     style={{ width: 200, height: 200 }}
                 />
-            </View>
+            </Animated.View>
         )
     }
     return (
@@ -60,6 +84,11 @@ const Home = () => {
                 style={{ position: 'absolute', zIndex: 2, marginTop: '20%' }}
                 horizontal
                 showsHorizontalScrollIndicator={false}
+                onScroll={Animated.event(
+                    [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+                    { useNativeDriver: false }
+                )}
+                scrollEventThrottle={26}
             />
         </View>
     );
