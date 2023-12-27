@@ -58,10 +58,10 @@ const Home = () => {
         });
         return (
             <Animated.View style={{transform: [{ translateY: translateY }],        }}>
-                {/* <Image
+                <Image
                     source={item.imge}
                     style={{ width: 200, height: 200 }}
-                /> */}
+                />
             </Animated.View>
         )
     }
