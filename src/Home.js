@@ -57,12 +57,12 @@ const Home = () => {
             outputRange: [-5, 25, -5]
         });
         return (
-            // <Animated.View style={{transform: [{ translateY: translateY }],        }}>
-            //     <Image
-            //         source={item.imge}
-            //         style={{ width: 200, height: 200 }}
-            //     />
-            // </Animated.View>
+            <Animated.View style={{transform: [{ translateY: translateY }],        }}>
+                <Image
+                    source={item.imge}
+                    style={{ width: 200, height: 200 }}
+                />
+            </Animated.View>
         )
     }
     return (
